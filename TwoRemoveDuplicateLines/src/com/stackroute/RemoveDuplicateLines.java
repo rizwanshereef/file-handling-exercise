@@ -10,25 +10,25 @@ public class RemoveDuplicateLines {
         removeDuplicateLines();
     }
 
-    /*Main method to removeeDuplicateLines from the file and copy to another file*/
+    /*Main method to remove Duplicate Lines from the file and copy to another file*/
     public static void removeDuplicateLines() {
-        Set<String> sortedset = new HashSet<>();
-        FileInputStream fileinp = null;
+        Set<String> sortedSet = new HashSet<>();
+        FileInputStream fileInput = null;
         BufferedReader reader = null;
         try {
-            fileinp = new FileInputStream("input.txt");
-            reader = new BufferedReader(new InputStreamReader(fileinp));
+            fileInput = new FileInputStream("input.txt");
+            reader = new BufferedReader(new InputStreamReader(fileInput));
             PrintWriter writer = new PrintWriter(new FileOutputStream("output.txt"));
-            /*Adding each line to Hashset for sorting*/
+            /*Adding each line to HashSet for sorting*/
             System.out.println("Input.txt:");
             String line = reader.readLine();
             while (line != null) {
                 System.out.println(line);
-                sortedset.add(line);
+                sortedSet.add(line);
                 line = reader.readLine();
             }
-            /*Convert HashSet to ArryaList then add to file*/
-            List<String> list = new ArrayList<>(sortedset);
+            /*Convert HashSet to ArrayList then add to file*/
+            List<String> list = new ArrayList<>(sortedSet);
             System.out.println("\noutput.txt:");
             for (String set : list) {
                 System.out.println(set);
